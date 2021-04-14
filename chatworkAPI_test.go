@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/wangqinru/notifiaction-go"
+	"github.com/wangqinru/notification-go/chatwork"
 	"log"
 )
 
