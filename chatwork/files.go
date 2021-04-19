@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func FilesPost(info ApiInfo, message string, fileName string, fileText string) (Response, error) {
+func FilesPost(info ApiInfo, message string, fileName string, fileBody string) (Response, error) {
 	apiURL := fmt.Sprintf(ChatWorkAPIBaseURL, Version, "rooms", info.RoomId, "files")
 	// mlutipart Bodyを作る
 	var buffer bytes.Buffer
@@ -23,7 +23,7 @@ func FilesPost(info ApiInfo, message string, fileName string, fileText string) (
 
 	// パートを追加する
 	partwriter, _ := mwriter.CreatePart(mheader)
-	io.Copy(partwriter, strings.NewReader(fileText))
+	io.Copy(partwriter, strings.NewReader(fileBody))
 
 	// パートを追加する
 	mwriter.WriteField("message", message)
