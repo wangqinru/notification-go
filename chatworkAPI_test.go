@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/wangqinru/notification-go/chatwork"
 	"log"
+
+	"github.com/wangqinru/notification-go/chatwork"
 )
 
-func main() {
+func chatwork_test() {
 	apiInfo := chatwork.ApiInfo{Token: "hogehogehogehoge", RoomId: "hogehogehogehoge"}
 	res, err := chatwork.MessagesPost(apiInfo, "hogehogehogehoge")
 
